@@ -6,31 +6,47 @@
 
 ##
 
-library(reticulate)
-library(basilisk)
+#library(reticulate)
+#library(basilisk)
 
-configureBasiliskEnv(src = "/gstore/data/omni/crispr/piru/crisprScore/R/basilisk_min.R")
+#configureBasiliskEnv(src = "/gstore/data/omni/crispr/piru/crisprScore/R/basilisk_min.R")
 # configureBasiliskEnv(src = "/Volumes/GoogleDrive/My Drive/Projects/CRISPR screen libraries/crisprScore/R/basilisk_min.R")
 
 # input_file_tss  <- "example_input_for_R/tssTable.txt"
 # input_file_grna <- "example_input_for_R/sgrnaInfoTable.txt"
 
-input_file_tss  <- "/gstore/data/omni/crispr/piru/crisprScore/inst/python/crisprai/example_input_for_R/tssTable.txt"
-input_file_grna <- "/gstore/data/omni/crispr/piru/crisprScore/inst/python/crisprai/example_input_for_R/sgrnaInfoTable.txt"
+#input_file_tss  <- "/gstore/data/omni/crispr/piru/crisprScore/inst/python/crisprai/example_input_for_R/tssTable.txt"
+#input_file_grna <- "/gstore/data/omni/crispr/piru/crisprScore/inst/python/crisprai/example_input_for_R/sgrnaInfoTable.txt"
 
 # input_file_tss  <- "/Volumes/GoogleDrive/My Drive/Projects/CRISPR screen libraries/crisprScore/inst/python/crisprai/example_input_for_R/tssTable.txt"
 # input_file_grna <- "/Volumes/GoogleDrive/My Drive/Projects/CRISPR screen libraries/crisprScore/inst/python/crisprai/example_input_for_R/sgrnaInfoTable.txt"
 
 
+# input_file_tss  <- "/Users/fortinj2/crisprScore/inst/python/crisprai/example_input_for_R/tssTable.txt"
+# input_file_grna <- "/Users/fortinj2/crisprScore/inst/python/crisprai/example_input_for_R/sgrnaInfoTable.txt"
 
-tssTable <- read.table(input_file_tss,
-                       head=TRUE,
-                       stringsAsFactors=FALSE)
-grnaTable <- read.table(input_file_grna,
-                        head=TRUE,
-                        stringsAsFactors=FALSE)
-tss_df <- tssTable
-sgrnaInfo_df <- sgrnaInfoTable <- grnaTable
+
+# tssTable <- read.table(input_file_tss,
+#                         head=TRUE,
+#                         stringsAsFactors=FALSE)
+# grnaTable <- read.table(input_file_grna,
+#                          head=TRUE,
+#                          stringsAsFactors=FALSE)
+# tss_df <- tssTable
+# sgrnaInfo_df <- sgrnaInfoTable <- grnaTable
+
+
+# ## testing ##
+
+
+# scores <- getWeissmanScore(tss_df,
+#                             sgrnaInfo_df,
+#                             verbose=TRUE,
+#                             modality=c("CRISPRa"))
+
+# #head(scores)
+
+
 
 
 #' @export 
@@ -38,7 +54,8 @@ sgrnaInfo_df <- sgrnaInfoTable <- grnaTable
 getWeissmanScore <- function(tss_df,
                              sgrnaInfo_df,
                              verbose=FALSE,
-                             modality=c("CRISPRa", "CRISPRi")
+                             modality=c("CRISPRa", "CRISPRi"),
+                             fork=FALSE
 ){
   
     modality  <- match.arg(modality)
@@ -426,15 +443,6 @@ getWeissmanScore <- function(tss_df,
 
 
 
-## testing ##
-
-
-scores <- getWeissmanScore(tss_df,
-                            sgrnaInfo_df,
-                            verbose=TRUE,
-                            modality=c("CRISPRa"))
-
-head(scores)
 
 
 # head(finalList[["tssTable"]])
