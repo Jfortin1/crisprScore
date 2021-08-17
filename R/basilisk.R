@@ -219,7 +219,6 @@ env_lindel <- BasiliskEnvironment(envname="lindel_basilisk",
 #' @importFrom basilisk BasiliskEnvironment
 env_crisprai <- BasiliskEnvironment(envname="crisprai_basilisk",
                                     pkgname="crisprScore",
-                                    #paths="python/crisprai",
                                     packages=crisprai_dependencies,
                                     channels = c("anaconda",
                                                  "bioconda",
