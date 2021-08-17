@@ -8,12 +8,12 @@ from sgRNA_learning3 import *    # contains functions to load genome and empiric
 
 ### Data input variables ###
 
-genome_type = "lifted_hg38"
-TRAINED_DIR = 'hg19_trained/'
-PREDICTION_DIR = 'hg38_predictions/'
+#genome_type = "lifted_hg38"
+#TRAINED_DIR = 'hg19_trained/'
+#PREDICTION_DIR = 'hg38_predictions/'
 
 # file output prefix
-OUTPUT_PREFIX = 'CRISPRa_July19_'
+#OUTPUT_PREFIX = 'CRISPRa_July19_'
 
 # genome fasta file
 GENOME_FASTA =  'input_files/lifted_hg38/hg38.fa'
